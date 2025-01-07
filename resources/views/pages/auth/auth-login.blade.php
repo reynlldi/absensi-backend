@@ -16,6 +16,8 @@
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                 @csrf
+
+                {{-- Email --}}
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -27,6 +29,7 @@
                     @enderror
                 </div>
 
+                {{-- Password --}}
                 <div class="form-group">
                     <div class="d-block">
                         <label for="password" class="control-label">Password</label>
