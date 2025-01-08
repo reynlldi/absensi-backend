@@ -84,6 +84,30 @@
                                 <input type="number" class="form-control" name="phone" required>
                             </div>
 
+                            {{-- Position --}}
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="text" class="form-control @error('position') is-invalid @enderror"
+                                    name="position" required>
+                                @error('position')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            {{-- Department --}}
+                            <div class="form-group">
+                                <label>Department</label>
+                                <input type="text" class="form-control @error('department') is-invalid @enderror"
+                                    name="department" required>
+                                @error('department')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
                             {{-- Role --}}
                             <div class="form-group">
                                 <label class="form-label">Roles</label>

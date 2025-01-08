@@ -38,6 +38,8 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8',
             'phone' => 'required',
+            'position' => 'required',
+            'department' => 'required',
             'role' => 'required'
         ]);
 
@@ -71,6 +73,8 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
+            'position' => 'required',
+            'department' => 'required',
             'role' => 'required'
         ]);
 
