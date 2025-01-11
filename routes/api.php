@@ -27,3 +27,9 @@ Route::get('/is-checkedin', [App\Http\Controllers\Api\AttendanceController::clas
 
 // update profile
 Route::post('/update-profile', [App\Http\Controllers\Api\AuthController::class, 'updateProfile'])->middleware('auth:sanctum');
+
+// create permissions
+Route::apiResource('/api-permissions', App\Http\Controllers\Api\PermissionController::class)->middleware('auth:sanctum');
+
+// notes
+Route::apiResource('/api-notes', App\Http\Controllers\Api\NoteController::class)->middleware('auth:sanctum');

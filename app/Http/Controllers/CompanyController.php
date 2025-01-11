@@ -8,15 +8,16 @@ use Illuminate\Http\Request;
 class CompanyController extends Controller
 {
     // show company
-    public function show(Company $company)
+    public function show($id)
     {
         $company = Company::find(1);
         return view("pages.company.show", compact('company'));
     }
 
     // show edit company
-    public function edit(Company $company)
+    public function edit($id)
     {
+        $company = Company::find($id);
         return view('pages.company.edit', compact('company'));
     }
 

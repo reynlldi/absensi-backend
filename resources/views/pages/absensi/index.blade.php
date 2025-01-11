@@ -20,6 +20,11 @@
             </div>
 
             <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        @include('layouts.alert')
+                    </div>
+                </div>
                 <h2 class="section-title">Attendances</h2>
                 <p class="section-lead">You can manage all Attendances, such as editing, deleting and more.</p>
 
@@ -66,23 +71,14 @@
                                                 <td>{{ $attendance->latlon_in }}</td>
                                                 <td>{{ $attendance->latlon_out }}</td>
                                                 <td>
-                                                    <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('attendances.edit', $attendance->id) }}'
-                                                            class="btn btn-sm btn-info btn-icon">
-                                                            <i class="fas fa-edit"></i>
-                                                            Edit
-                                                        </a>
-
-                                                        <form action="{{ route('attendances.destroy', $attendance->id) }}"
-                                                            method="POST" class="ml-2">
-                                                            <input type="hidden" name="_method" value="DELETE" />
-                                                            <input type="hidden" name="_token"
-                                                                value="{{ csrf_token() }}" />
-                                                            <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                <i class="fas fa-times"></i> Delete
-                                                            </button>
-                                                        </form>
-                                                    </div>
+                                                    <form action="{{ route('attendances.destroy', $attendance->id) }}"
+                                                        method="POST" class="ml-2">
+                                                        <input type="hidden" name="_method" value="DELETE" />
+                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                                        <button class="btn btn-sm btn-danger btn-icon confirm-delete">
+                                                            <i class="fas fa-times"></i> Delete
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

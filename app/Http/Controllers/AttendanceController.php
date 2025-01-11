@@ -18,4 +18,11 @@ class AttendanceController extends Controller
             })->orderBy('id', 'desc')->paginate(10);
         return view('pages.absensi.index', compact('attendances'));
     }
+
+    // destroy
+    public function destroy($id)
+    {
+        $attendance = Attendance::find($id)->delete();
+        return redirect()->route('attendances.index', compact('attendance'))->with('success', 'Attendance Deleted Successfully');
+    }
 }

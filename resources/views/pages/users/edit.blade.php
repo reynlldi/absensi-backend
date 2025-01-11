@@ -124,18 +124,18 @@
                                 <label class="form-label">Roles</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="admin" class="selectgroup-input"
-                                            @if ($user->role == 'admin') checked @endif>
+                                        <input type="radio" name="role" value="Admin" class="selectgroup-input"
+                                            @if ($user->role == 'Admin') checked @endif>
                                         <span class="selectgroup-button">Admin</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="supervisor" class="selectgroup-input"
-                                            @if ($user->role == 'supervisor') checked @endif>
+                                        <input type="radio" name="role" value="Supervisor" class="selectgroup-input"
+                                            @if ($user->role == 'Supervisor') checked @endif>
                                         <span class="selectgroup-button">Supervisor</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="role" value="staff" class="selectgroup-input"
-                                            @if ($user->role == 'staff') checked @endif>
+                                        <input type="radio" name="role" value="Staff" class="selectgroup-input"
+                                            @if ($user->role == 'Staff') checked @endif>
                                         <span class="selectgroup-button">Staff</span>
                                     </label>
                                 </div>

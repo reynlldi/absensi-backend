@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('phone')->nullable();
-            $table->string('role')->default('Staff');
+        Schema::create('notes', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('users_id')->constrained('users')->onDelete('cascade');
+            $table->string('title');
+            $table->string('note');
+            $table->timestamps();
         });
     }
 
@@ -22,9 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('phone');
-            $table->dropColumn('role');
-        });
+        Schema::dropIfExists('notes');
     }
 };
